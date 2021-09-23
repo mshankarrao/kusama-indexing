@@ -1,0 +1,20 @@
+specVersion: 0.0.1
+description: ''
+repository: ''
+schema: ./schema.graphql
+network:
+  endpoint: wss://kusama.api.onfinality.io/public-ws
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    filter: 
+      specName: kusama    
+    startBlock: 1
+    mapping:
+      handlers:
+        - handler: handleVoting
+          kind: substrate/EventHandler
+          filter:
+            module: council
+            method: vote
+

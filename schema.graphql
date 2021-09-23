@@ -1,0 +1,9 @@
+type StarterEntity @entity {
+  id: ID! #id is a required field
+  account: String!
+
+  voted: Boolean 
+  number_voted_yes: BigInt
+
+  number_voted_no: BigInt
+}
