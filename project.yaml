@@ -8,13 +8,13 @@ dataSources:
   - name: main
     kind: substrate/Runtime
     filter: 
-      specName: kusama    
-    startBlock: 1
+      specName: kusama  
+    startBlock: 9033000
     mapping:
       handlers:
         - handler: handleVoting
           kind: substrate/EventHandler
           filter:
             module: council
-            method: vote
+            method: Voted
 
